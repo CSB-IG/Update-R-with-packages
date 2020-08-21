@@ -1,0 +1,30 @@
+##### Pipeline cortesia del Dr. Guillermo de Anda Jáuregui para actualizar R y reinstalar todos los paquetes que ya teníamos instalados####
+
+#### Desde una consola de R o Rstudio ####
+
+write.table(x = installed.packages(), sep = "\t", file = "prueba.txt")
+
+ #### aqui instalas R-base en su nueva versión con el instalador ejecutable de tu sistema operativo de elección ###
+
+xxx = read.table(file = "prueba.txt", sep = "\t")
+
+#### Aqui vas a instalar los paquetes normales (i.e. no-Bioconductor) ####
+
+install.packages(xxx$Package, dependencies = TRUE)
+
+#va a quejarse de que no encontró lo de Bioconductor, para resolverlo #####
+
+instalados = installed.packages()
+
+los_que_faltan = setdiff(data.frame(instalados)$Package, xxx$Package)
+
+#instalas el instalador de Bioconductor #####
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install()
+
+#instalas los ue faltan 
+BiocManager::install(los_que_faltan)
+
+#### ¡Voilá! ####
