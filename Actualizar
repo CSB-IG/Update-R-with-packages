@@ -24,7 +24,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install()
 
-#instalas los ue faltan 
+#instalas los paquetes que faltan 
 BiocManager::install(los_que_faltan)
 
 #### ¡Voilá! ####
