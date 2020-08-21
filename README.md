@@ -1,2 +1,2 @@
 # Update-R-with-packages
-Update R
+Pipeline cortesia del Dr. Guillermo de Anda Jáuregui para actualizar versión de R y re-instalar semi-automáticamente todos los paquetes que ya tenías instalados
