@@ -6,6 +6,8 @@ write.table(x = installed.packages(), sep = "\t", file = "prueba.txt")
 
  #### aqui instalas R-base en su nueva versión con el instalador ejecutable de tu sistema operativo de elección ###
 
+#### Nuevamente desde la consola de R o Rstudio ####
+
 xxx = read.table(file = "prueba.txt", sep = "\t")
 
 #### Aqui vas a instalar los paquetes normales (i.e. no-Bioconductor) ####
